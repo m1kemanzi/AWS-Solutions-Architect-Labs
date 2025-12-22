@@ -18,7 +18,7 @@
 	//
 	// Browse more options at: https://hub.docker.com/r/microsoft/devcontainers
 	// or build your own using the Dockerfile option below.
-	"image": "mcr.microsoft.com/devcontainers/universal:4.0.1-noble"
+	"image": "mcr.microsoft.com/devcontainers/universal:4.0.1-noble",
 	// Use "build":
 	// instead of the image to use a Dockerfile to build an image.
 	// "build": {
@@ -27,9 +27,10 @@
     // }
 	// Features add additional features to your environment. See https://containers.dev/features
 	// Beware: features are not supported on all platforms and may have unintended side-effects.
-	// "features": {
-    //   "ghcr.io/devcontainers/features/docker-in-docker": {
-    //     "moby": false
-    //   }
-    // }
+	"features": {
+		"ghcr.io/devcontainers/features/aws-cli:1": {
+			"version": "latest"
+		}
+	},
+	"postCreateCommand": "echo 'export AWS_CLI_AUTO_PROMPT=on-partial' >> ~/.bashrc"
 }
