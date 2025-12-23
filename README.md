@@ -4,7 +4,7 @@ This repository contains hands-on AWS practice exercises and experiments for lea
 
 ## Prerequisites
 
-- AWS CLI v2 installed
+- AWS CLI v2 (automatically installed via devcontainer)
 - AWS account with appropriate credentials configured
 - Basic understanding of cloud computing concepts
 
@@ -24,9 +24,15 @@ You'll need:
 
 ## Repository Structure
 
-- Practice exercises organized by AWS service
-- Infrastructure as Code examples
-- Scripts and automation tools
+```
+.
+├── s3/
+│   └── bash/
+│       ├── create-bucket    # Create S3 bucket
+│       └── delete-bucket    # Delete S3 bucket
+├── aws-practice/            # General AWS exercises
+└── README.md
+```
 
 ## AWS Services Covered
 
@@ -40,7 +46,19 @@ You'll need:
 
 ## Usage
 
-Each folder contains specific exercises or projects. Navigate to individual directories for detailed instructions.
+### S3 Bash Scripts
+
+Create an S3 bucket:
+```bash
+./s3/bash/create-bucket your-unique-bucket-name
+```
+
+Delete an S3 bucket:
+```bash
+./s3/bash/delete-bucket your-bucket-name
+```
+
+**Important**: S3 bucket names must be globally unique across all AWS accounts. Use lowercase letters, numbers, and hyphens only (3-63 characters).
 
 ## Resources
 
