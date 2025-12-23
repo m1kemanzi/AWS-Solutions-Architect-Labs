@@ -1,1 +1,12 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash   
+echo "deleting bucket"
+
+# Check if a variable is passed as an argument
+if [ -z "$1" ]; then
+  echo "Chill bro, theres no bucket name provided. eg: ./bucket my-bucket-name"
+  exit 1
+fi
+
+BUCKET_NAME=$1
+
+aws s3api delete-bucket --bucket $BUCKET_NAME 

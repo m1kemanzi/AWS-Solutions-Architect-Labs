@@ -1,5 +1,5 @@
 #!/usr/bin/env bash   
-echo "== create bucket"
+echo "creating bucket"
 
 # Check if a variable is passed as an argument
 if [ -z "$1" ]; then
